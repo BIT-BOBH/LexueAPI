@@ -1,7 +1,17 @@
 const axios = require('axios').default;
 const apiconfig = require('../ApiConfig');
 
-function ValidateMoodleSession(moodlesession) {
+function GetSesskeyFromHtml(html) {
+  const beginStr = `"sesskey":"`;
+  const endStr = `","sessiontimeout"`;
+  try {
+    return html.split(beginStr)[1].split(endStr)[0];
+  }catch(e){
+    return "";
+  }
+}
+
+function ValidateMoodleSession(moodlesession, req) {
   return new Promise ((resolve, reject) => {
     let config = {
       method: 'get',
@@ -25,6 +35,13 @@ function ValidateMoodleSession(moodlesession) {
     };
     axios.request(config).then((response) => {
       if(response.headers.location == undefined && response.status == 200) {
+        const sessKey = GetSesskeyFromHtml(response.data.toString());
+        req.sessKey = sessKey;
+        req.indexHtml = response.data.toString();
+        if(sessKey == "") {
+          resolve(false);
+          return;
+        }
         resolve(true);
       } else {
         resolve(false);
@@ -48,7 +65,7 @@ const ParseLexueCookie = async(req, res, next) => {
     return;
   }
   // 验证cookie是否有效
-  const validCookie = await ValidateMoodleSession(MoodleSession);
+  const validCookie = await ValidateMoodleSession(MoodleSession, req);
   if(!validCookie) {
     res.status(401).send(JSON.stringify({
       code: 401,
