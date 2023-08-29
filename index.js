@@ -24,12 +24,14 @@ Logger.LogInfo("JwtToken: " + JwtToken);
 const app = express();
 app.use(cookieParser());
 app.use(require("./middleware/SecurityHeader"));
+app.use(require("./middleware/LexueCookieParser"));
 app.use(require("./middleware/Logger"));
 app.use(require("body-parser").urlencoded({ extended: true }));
 app.use(express.json());
 
 // set routers
 app.use("/api/test", require("./routers/TestRouter"));
+app.use("/api/user", require("./routers/UserRouter"));
 
 // set static routers
 app.use(express.static(__dirname + '/static'));
