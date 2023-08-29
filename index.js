@@ -19,19 +19,6 @@ const JwtToken = crypto.randomBytes(64).toString('hex');
 process.env.JETTOKEN = JwtToken;
 Logger.LogInfo("JwtToken: " + JwtToken);
 
-// connect to mongodb
-const mongodb_connect = () => {
-    return new Promise((resolve, reject) => {
-        mongoose.connect(process.env.MONGODB)
-        .then(() => {
-            Logger.LogInfo("Successfully connected to MongoDB!");
-            resolve();
-        })
-        .catch((err)=>{
-            reject(err);
-        })
-    });
-}
 
 // init express app
 const app = express();
@@ -52,7 +39,6 @@ app.use(require("./routers/404Router"));
 app.use(require("./routers/ErrorRouter"));
 
 const server = http.createServer(app).listen(expressPort,async()=>{
-    await mongodb_connect();
     if(process.env.LOCALDEV){
         Logger.LogInfo(`Starting server_DEV on port ${expressPort}`);
     }else{
