@@ -29,8 +29,9 @@ app.use(require("body-parser").urlencoded({ extended: true }));
 app.use(express.json());
 
 // set routers
-app.use("/api/test", require("./routers/TestRouter"));
 app.use("/api/user", require("./routers/UserRouter"));
+app.use("/api/course", require("./routers/CourseRouter"));
+
 
 // set static routers
 app.use(express.static(__dirname + '/static'));
