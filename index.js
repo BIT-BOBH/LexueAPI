@@ -24,7 +24,6 @@ Logger.LogInfo("JwtToken: " + JwtToken);
 const app = express();
 app.use(cookieParser());
 app.use(require("./middleware/SecurityHeader"));
-app.use(require("./middleware/LexueCookieParser"));
 app.use(require("./middleware/Logger"));
 app.use(require("body-parser").urlencoded({ extended: true }));
 app.use(express.json());
