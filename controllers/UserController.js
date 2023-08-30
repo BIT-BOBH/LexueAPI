@@ -84,7 +84,7 @@ const GetUserInfo = async(req,res,next) => {
   const html = await getUserProfileHtml(id, req.moodlesession);
   const $ = cheerio.load(html);
   const fullName = $('.page-header-headings').text().trim();
-  const email = $('.profile_tree').find('section').first().find('a').text().trim();
+  const email = $('.profile_tree').find('section').first().find('dd').first().find('a').text().trim();
   const courseInfo = [];
   const liElements = $('.profile_tree').find('section').eq(1).find('li');
   liElements.each((index, liElement) => {
