@@ -38,6 +38,7 @@ function ValidateMoodleSession(moodlesession, req) {
         const sessKey = GetSesskeyFromHtml(response.data.toString());
         req.sessKey = sessKey;
         req.indexHtml = response.data.toString();
+        req.moodlesession = moodlesession;
         if(sessKey == "") {
           resolve(false);
           return;
