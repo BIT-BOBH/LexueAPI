@@ -45,6 +45,10 @@ const getUserProfileHtml = async(userId, moodlesession) => {
   return await universalGetRequest(`${apiconfig.API_USERPROFILE}?showallcourses=1&id=${userId}`, moodlesession);
 }
 
+const getUserPostsHtml = async(userId, moodlesession) => {
+  return await universalGetRequest(`${apiconfig.API_USERPOSTS}?id=${userId}&perpage=99999`, moodlesession);
+}
+
 const GetSelfInfo = async(req,res,next) => {
   const $ = cheerio.load(req.indexHtml);
   const fullName = $('.myprofileitem.fullname').text().trim();
@@ -90,6 +94,13 @@ const GetUserInfo = async(req,res,next) => {
     const link = aElement.attr('href');
     courseInfo.push({ name, link });
   });
+  if(fullName == "") {
+    res.json({
+      error: true,
+      msg: 'User Not Found!',
+    });
+    return;
+  }
   res.json({
     fullName,
     email,
@@ -97,8 +108,40 @@ const GetUserInfo = async(req,res,next) => {
   });
 }
 
+const GetUserPosts = async(req,res,next) => {
+  const id = req.params.id;
+  if(id == undefined) {
+    res.json({
+      error: true,
+      msg: 'Invalid user id!'
+    });
+    return;
+  }
+  const html = await getUserPostsHtml(id, req.moodlesession);
+  const $ = cheerio.load(html);
+  const postsInfo = [];
+  const articles = $('.user-content').find('article');
+  articles.each((index, article) => {
+    const titleElem = $(article).find('h3').first().find('a').last();
+    const title = titleElem.text().trim();
+    const postUrl = titleElem.attr('href');
+    const time = $(article).find('time').attr('datetime');
+    const timestamp = Date.parse(time);
+    postsInfo.push({
+      title,
+      postUrl,
+      time,
+      timestamp,
+    });
+  });
+  res.json({
+    postsInfo
+  });
+}
+
 module.exports = {
   GetSelfInfo,
   GetUserInfo,
+  GetUserPosts,
 
 };
