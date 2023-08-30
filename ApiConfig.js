@@ -1,4 +1,4 @@
-const API_USERINFO = 'https://lexue.bit.edu.cn/my/';
+const API_USERINFO = 'https://lexue.bit.edu.cn/';
 
 
 module.exports = {
