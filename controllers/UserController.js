@@ -2,12 +2,12 @@ const cheerio = require('cheerio');
 const apiconfig = require('../ApiConfig');
 const axios = require('axios').default;
 
-const getDetailUserInfoHtml = (userId, moodlesession) => {
+const universalGetRequest = (url, moodlesession) => {
   return new Promise ((resolve, reject) => {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: `${apiconfig.API_DETAILUSERINFO}?id=${userId}`,
+      url: url,
       headers: { 
         'Host': 'lexue.bit.edu.cn', 
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0', 
@@ -37,7 +37,15 @@ const getDetailUserInfoHtml = (userId, moodlesession) => {
   });
 }
 
-const GetUserInfo = async(req,res,next) => {
+const getDetailUserInfoHtml = async(userId, moodlesession) => {
+  return await universalGetRequest(`${apiconfig.API_DETAILUSERINFO}?id=${userId}`, moodlesession);
+}
+
+const getUserProfileHtml = async(userId, moodlesession) => {
+  return await universalGetRequest(`${apiconfig.API_USERPROFILE}?showallcourses=1&id=${userId}`, moodlesession);
+}
+
+const GetSelfInfo = async(req,res,next) => {
   const $ = cheerio.load(req.indexHtml);
   const fullName = $('.myprofileitem.fullname').text().trim();
   const firstAccessTime = $($('.myprofileitem.firstaccess').contents()[2]).text().trim();
@@ -60,7 +68,37 @@ const GetUserInfo = async(req,res,next) => {
   });
 }
 
+const GetUserInfo = async(req,res,next) => {
+  const id = req.params.id;
+  if(id == undefined) {
+    res.json({
+      error: true,
+      msg: 'Invalid user id!'
+    });
+    return;
+  }
+  const html = await getUserProfileHtml(id, req.moodlesession);
+  const $ = cheerio.load(html);
+  const fullName = $('.page-header-headings').text().trim();
+  const email = $('.profile_tree').find('section').first().find('a').text().trim();
+  const courseInfo = [];
+  const liElements = $('.profile_tree').find('section').eq(1).find('li');
+  liElements.each((index, liElement) => {
+    if($(liElement).attr('class') == 'contentnode') return;
+    const aElement = $(liElement).find('a');
+    const name = aElement.text().trim();
+    const link = aElement.attr('href');
+    courseInfo.push({ name, link });
+  });
+  res.json({
+    fullName,
+    email,
+    courseInfo
+  });
+}
+
 module.exports = {
+  GetSelfInfo,
   GetUserInfo,
 
 };
