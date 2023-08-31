@@ -94,8 +94,47 @@ const GetCourseContent = async(req,res,next) => {
     if(!classValue.includes('section')) return;
     const curSection = {};
     const contentElem = $(section).find('.content');
-    curSection.name = $(contentElem).find('h3').text().trim();
-
+    const titleElem = $(contentElem).find('h3');
+    const titleAElem = $(titleElem).find('a');
+    curSection.name = titleElem.text().trim();
+    // 获取小节的链接
+    if(titleAElem.length > 0) {
+      curSection.url = titleAElem.attr('href');
+    }
+    // 获取summary
+    curSection.summary = $(contentElem).find('.summary').html();
+    if(curSection.summary != null) {
+      curSection.summary = curSection.summary.trim();
+    }
+    // 获取summaryText
+    curSection.summaryText = $(contentElem).find('.summarytext').html();
+    if(curSection.summaryText != null) {
+      curSection.summaryText = curSection.summaryText.trim();
+    }
+    // 获取 activities
+    curSection.activity = [];
+    const activitiesElem = $(contentElem).find('li.activity');
+    activitiesElem.each((index, activity) => {
+      const curActivity = {};
+      const activityAElem = $(activity).find('a');
+      const instanceNameElem = $(activity).find('.instancename');
+      const contentWithoutLinkElem = $(activity).find('.contentwithoutlink');
+      const contentAfterLinkElem = $(activity).find('.contentafterlink');
+      if(activityAElem.length > 0) {
+        curActivity.url = $(activityAElem).attr('href');
+      }
+      if(instanceNameElem.length > 0) {
+        curActivity.access = $(instanceNameElem).children('.accesshide').text().trim();
+        curActivity.name = $(instanceNameElem).children('.accesshide').remove().end().text().trim();
+      }
+      if(contentWithoutLinkElem.length > 0) {
+        curActivity.contentwithoutlink = $(contentWithoutLinkElem).html().trim();
+      }
+      if(contentAfterLinkElem.length > 0) {
+        curActivity.contentafterlink = $(contentAfterLinkElem).html().trim();
+      }
+      curSection.activity.push(curActivity);
+    })
     sections.push(curSection);
   });
   res.json({
