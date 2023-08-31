@@ -1,19 +1,18 @@
+const cheerio = require('cheerio');
 const apiconfig = require('../ApiConfig');
 const axios = require('axios').default;
 
-const getEnrolledCourse = (sessKey, moodlesession, offset = 0, limit = 0) => {
+const getCalendarEvent = (sessKey, moodlesession, timesortto, timesortfrom) => {
   return new Promise ((resolve, reject) => {
     let data = JSON.stringify([
       {
         "index": 0,
-        "methodname": "core_course_get_enrolled_courses_by_timeline_classification",
+        "methodname": "core_calendar_get_action_events_by_timesort",
         "args": {
-          "offset": offset,
-          "limit": limit,
-          "classification": "all",
-          "sort": "fullname",
-          "customfieldname": "",
-          "customfieldvalue": ""
+          "limitnum": 10,
+          "timesortfrom": timesortfrom,
+          "timesortto": timesortto,
+          "limittononsuspendedevents": true
         }
       }
     ]);
@@ -51,8 +50,24 @@ const getEnrolledCourse = (sessKey, moodlesession, offset = 0, limit = 0) => {
   });
 }
 
-const GetAllCourse = async(req,res,next) => {
-  const retJson = await getEnrolledCourse(req.sessKey, req.moodlesession);
+const GetSelfEvent = async(req,res,next) => {
+  const timesortto = req.query.timesortto;
+  const timesortfrom = req.query.timesortfrom;
+  if(timesortto == undefined) {
+    res.json({
+      error: true,
+      msg: 'Invalid param timesortto!'
+    });
+    return;
+  }
+  if(timesortfrom == undefined) {
+    res.json({
+      error: true,
+      msg: 'Invalid param timesortfrom!'
+    });
+    return;
+  }
+  const retJson = await getCalendarEvent(req.sessKey, req.moodlesession, timesortto, timesortfrom);
   if(typeof(retJson) != 'object') {
     res.json({
       error: true,
@@ -69,5 +84,6 @@ const GetAllCourse = async(req,res,next) => {
 }
 
 module.exports = {
-  GetAllCourse
+  GetSelfEvent,
+
 };

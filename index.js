@@ -31,7 +31,7 @@ app.use(express.json());
 // set routers
 app.use("/api/user", require("./routers/UserRouter"));
 app.use("/api/course", require("./routers/CourseRouter"));
-
+app.use("/api/event", require("./routers/EventRouter"));
 
 // set static routers
 app.use(express.static(__dirname + '/static'));
