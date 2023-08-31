@@ -87,6 +87,13 @@ const GetCourseContent = async(req,res,next) => {
   const $ = cheerio.load(html);
   const sections = [];
   const courseName = $('.page-header-headings').find('h1').text().trim();
+  if(courseName == "") {
+    res.json({
+      error: true,
+      msg: 'Course not found!'
+    });
+    return;
+  }
   const topics = $('li');
   topics.each((index, section) => {
     const classValue = $(section).attr('class');

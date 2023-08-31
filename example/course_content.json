@@ -1,0 +1,602 @@
+{
+  "courseName": "2021-计算机科学与程序设计（C++，徐特立学院）",
+  "sections": [
+      {
+          "name": ".",
+          "summary": "<div class=\"no-overflow\"><p align=\"center\"><span style=\"font-size: x-large;\" size=\"5\"><strong><span style=\"color: #0000ff;\">程序设计从这里起步</span></strong></span></p>\n<p align=\"left\"><strong><span style=\"color: #ff0000; font-size: medium;\">程序设计语言不是老师教会的，是你自己学会的。</span></strong></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><b>课程教材：</b>《C++程序设计思想与方法》（慕课版，第3版），翁惠玉等编著，人民邮电出版社<br><b>教学参考书：</b>《C++语言程序设计》（第4版，在线教学版），郑莉等编著，清华大学出版社<br></p></div></div>"
+              },
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><b>授课时间：</b>教学日历4~19周，星期三 6-7 节，星期五 6-7节；文四楼221<br><b>课程考核（100分）：信息技术基础</b>（10分）+ 平时作业 + 项目开发 + 期末考试<br></p></div></div>"
+              },
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><font style=\"BACKGROUND-COLOR: #ffffff\" color=\"#ff0000\" size=\"4\"><strong>有什么问题？来这里讨论吧！</strong></font></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/forum/view.php?id=291661",
+                  "access": "",
+                  "name": "乐在其中——C++课程讨论区"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/forum/view.php?id=291662",
+                  "access": "讨论区",
+                  "name": "灌水乐园"
+              },
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><strong><span style=\"color: #ff0000; font-size: large;\" size=\"4\" color=\"#ff0000\">下载区：</span></strong></p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/folder/view.php?id=291664",
+                  "access": "文件夹",
+                  "name": "编程环境"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/folder/view.php?id=297116",
+                  "access": "文件夹",
+                  "name": "2021C++课件"
+              },
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><font color=\"#0000ff\" size=\"4\"><strong>参考资料：</strong></font></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/page/view.php?id=291674",
+                  "access": "网页",
+                  "name": "学习C/C++不得不看的文章（ZZ）"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/resource/view.php?id=291706",
+                  "access": "文件",
+                  "name": "How_Not_to_Program_in_CPP"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/page/view.php?id=291671",
+                  "access": "网页",
+                  "name": "C语言的编程风格[转载]"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/page/view.php?id=291672",
+                  "access": "网页",
+                  "name": "说一说编程的恶习[转载]"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/forum/view.php?id=313299",
+                  "access": "讨论区",
+                  "name": "新闻通告"
+              }
+          ]
+      },
+      {
+          "name": "09月13日 - 09月19日",
+          "summary": "<div class=\"no-overflow\"><p style=\"color: #0000ff; font-weight: bold;\" align=\"center\">第1周（教学日历第4周）</p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><strong>目的：</strong>学习C++语言集成开发环境 IDE，掌握 IDE 的一般使用方法。</p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/quiz/view.php?id=291724",
+                  "access": "测验",
+                  "name": "自测1：C++入门"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291725",
+                  "access": "编程练习",
+                  "name": "1. 【入门】Hello world."
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291863",
+                  "access": "编程练习",
+                  "name": "2.【图形】空心数字梯形*"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291823",
+                  "access": "编程练习",
+                  "name": "3.【日期】到底有几天"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291861",
+                  "access": "编程练习",
+                  "name": "H1.【选做•学长出题】囧囧有神的囧rz"
+              },
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p>说明：编程作业中我们开设了选做题，其目的是为了让学有余力的同学进行一些更深入的思考。选做题与分数无关，<strong><span style=\"color: #0000ff;\">没有必要为了 “分数” 去做选做题</span></strong>。</p></div></div>"
+              }
+          ]
+      },
+      {
+          "name": "09月20日 - 09月26日",
+          "summary": "<div class=\"no-overflow\"><p align=\"center\"><span style=\"color: #0000ff;\"><strong>第2周（教学日历第5周）</strong></span></p><p style=\"text-align: left;\"><span style=\"color: #0000ff;\"><strong>根据学校通知，9月26日（星期日）按10月8日（星期五）教学计划开展教学活动。<br></strong></span></p>\n<div>\n<div class=\"no-overflow\">\n<div class=\"no-overflow\">\n<p><strong></strong></p>\n</div>\n</div>\n</div></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><strong>目的：</strong>学习顺序结构和简单的分支结构，练习处理一些简单的问题。</p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291785",
+                  "access": "编程练习",
+                  "name": "4.【应用】阅兵徒手方队"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291869",
+                  "access": "编程练习",
+                  "name": "5.【应用】小明的食堂"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291827",
+                  "access": "编程练习",
+                  "name": "6.【中学】小明做外卖*：穷举"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291849",
+                  "access": "编程练习",
+                  "name": "7.【中学】贪吃的猴子：递推"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291803",
+                  "access": "编程练习",
+                  "name": "8.【小学】青蛙出井（学长出题）"
+              },
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p id=\"yui_3_17_2_1_1476169226371_16300\"><span style=\"color: #ff0000;\"><strong>重要说明：</strong></span>最近开始布置一些 \"选作” 题，这些题是为水平较高、学有余力、想多做题的同学准备的，但不要太功利了，学到本事才是关键；不要指望会被承诺因为选作题而在期末获得额外的分数，大概只有在关键时刻（例如，最后计算出来的成绩为59分）才会考虑选作题的因素。</p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291833",
+                  "access": "编程练习",
+                  "name": "H2.【选做▪日期】求后面几天的日期"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291910",
+                  "access": "编程练习",
+                  "name": "H3.【选做▪游戏】小蜜蜂"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291832",
+                  "access": "编程练习",
+                  "name": "H4.【选做▪学长出题】分式连乘"
+              }
+          ]
+      },
+      {
+          "name": "09月27日 - 10月3日",
+          "summary": "<div class=\"no-overflow\"><p style=\"color: #0000ff;\" align=\"center\"><strong>第3周（教学日历第6周）：10月1日开始放假...</strong></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291787",
+                  "access": "编程练习",
+                  "name": "9.【应用.日期】再算星期——处理非法输入"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291799",
+                  "access": "编程练习",
+                  "name": "10【小学】二年级的题目*"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291796",
+                  "access": "编程练习",
+                  "name": "11【小学】求 x^n 的 m 位尾数"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291862",
+                  "access": "编程练习",
+                  "name": "H5【选做•学长出题】参观军事博物院"
+              }
+          ]
+      },
+      {
+          "name": "10月4日 - 10月10日",
+          "summary": "<div class=\"no-overflow\"><p style=\"color: #0000ff;\" align=\"center\"><span class=\"dimmed_text\"><strong><span style=\"color: #0000cc;\" color=\"#0000cc\">第4周（教学日历第7周）：放假休息一周</span></strong></span></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p align=\"left\"><span class=\"\" style=\"color: rgb(239, 69, 64);\">本周继续放假，也是我们本学期中最后一个“大假期”了。</span>放假的同时，我们也可以抽点时间继续进行编程练习。</p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291852",
+                  "access": "编程练习",
+                  "name": "12【应用】谁能出线"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291885",
+                  "access": "编程练习",
+                  "name": "13【应用】决赛成绩排序"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=300537",
+                  "access": "编程练习",
+                  "name": "14【应用】国际标准书号"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291808",
+                  "access": "编程练习",
+                  "name": "H6【选作▪学长出题】程序猿的烦恼"
+              }
+          ]
+      },
+      {
+          "name": "10月11日 - 10月17日",
+          "summary": "<div class=\"no-overflow\"><p style=\"color: #0000ff;\" align=\"center\"><strong>教学第5周（教学日历第8周）</strong></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><strong>目的：</strong>练习基本算法和多重循环。</p>\n<p>在我们的题目标题的后面你会发现在一些题目的后面有了星号 \"<span class=\"\" style=\"color: rgb(239, 69, 64);\"><b>*</b></span>”，它的含义是：<span class=\"\" style=\"color: rgb(239, 69, 64);\">本题是曾经的期末试题</span>。</p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291853",
+                  "access": "编程练习",
+                  "name": "15【数列】等值数列段"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291912",
+                  "access": "编程练习",
+                  "name": "16【学长出题】寒冷的北京"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=302036",
+                  "access": "编程练习",
+                  "name": "17【同学出题】插入排序"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=300811",
+                  "access": "编程练习",
+                  "name": "18【扩展▪贪心】输出最大整数"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291886",
+                  "access": "编程练习",
+                  "name": "19【大学】北理工的恶龙"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291835",
+                  "access": "编程练习",
+                  "name": "H7【选做▪小学】n 阶乘的后面包含多少零"
+              }
+          ]
+      },
+      {
+          "name": "10月18日 - 10月24日",
+          "summary": "<div class=\"no-overflow\"><p style=\"color: #0000ff;\" align=\"center\"><strong>教学第6周（教学日历第9周）</strong></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p><strong>目的：</strong>练习数组、排序等简单算法设计等。</p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291884",
+                  "access": "编程练习",
+                  "name": "20【大学】寻找矩阵的鞍点"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=300861",
+                  "access": "编程练习",
+                  "name": "21【扩展▪串处理】整数累加和"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291878",
+                  "access": "编程练习",
+                  "name": "22【中学】整数问题"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291871",
+                  "access": "编程练习",
+                  "name": "23【中学】猜数字"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=301503",
+                  "access": "编程练习",
+                  "name": "H8【同学出题•选做】欣逸的正方形——二维数组"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291839",
+                  "access": "编程练习",
+                  "name": "H9【扩展▪选做】皇后的控制力"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291765",
+                  "access": "编程练习",
+                  "name": "H10【选作▪过节】程序员节1024（今天彩蛋）"
+              }
+          ]
+      },
+      {
+          "name": "10月25日 - 10月31日",
+          "summary": "<div class=\"no-overflow\"><p style=\"text-align: center;\"><span style=\"color: #0000ff;\"><strong>教学第7周（教学日历第10周）</strong></span></p>\n<p style=\"text-align: left;\"><strong>目的</strong><span style=\"color: #000000;\">：本周练习数组和函数编程。</span></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291887",
+                  "access": "编程练习",
+                  "name": "24【字符】删除重复字符"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291888",
+                  "access": "编程练习",
+                  "name": "25【字符】合并字符串"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291908",
+                  "access": "编程练习",
+                  "name": "26【日期】计算天数（编主函数）"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291909",
+                  "access": "编程练习",
+                  "name": "27【中学】孪生素数（编子函数）"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291913",
+                  "access": "编程练习",
+                  "name": "28【学长出题】侯瑞杰：回文素数"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=303667",
+                  "access": "编程练习",
+                  "name": "H11【选做•应用】动手实现Base64算法"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/forum/view.php?id=305009",
+                  "access": "讨论区",
+                  "name": "项目开发分组",
+                  "contentafterlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p>请大家在这里提交分组表。<br></p></div></div>"
+              }
+          ]
+      },
+      {
+          "name": "11月1日 - 11月7日",
+          "summary": "<div class=\"no-overflow\"><p style=\"color: #0000ff;\" align=\"center\"><strong>教学第8周（教学日历第11周）：函数</strong></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291929",
+                  "access": "编程练习",
+                  "name": "29【大学】函数递归*"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291930",
+                  "access": "编程练习",
+                  "name": "30【大学】求解平方根"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291932",
+                  "access": "编程练习",
+                  "name": "31【字符】回文字符串——递归"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291931",
+                  "access": "编程练习",
+                  "name": "32【中学】求最大公约数——递归"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291906",
+                  "access": "编程练习",
+                  "name": "33【字符】自编车号"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291889",
+                  "access": "编程练习",
+                  "name": "H12【选做•中学】数制转换"
+              }
+          ]
+      },
+      {
+          "name": "11月8日 - 11月14日",
+          "summary": "<div class=\"no-overflow\"><div style=\"text-align: center;\"><span style=\"color: #0000ff; font-weight: bold;\">教学第9周（教学日历第12周）</span></div></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291907",
+                  "access": "编程练习",
+                  "name": "34【游戏】扫雷"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291949",
+                  "access": "编程练习",
+                  "name": "35【小学】比较大小——指针"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291951",
+                  "access": "编程练习",
+                  "name": "36【小学】整数再排序——指针"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291952",
+                  "access": "编程练习",
+                  "name": "37【大学】素数计数—用指针哦"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291953",
+                  "access": "编程练习",
+                  "name": "38【字符】字符替换*——用指针更方便"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291911",
+                  "access": "编程练习",
+                  "name": "H13【大学】高精度加减法（选作）"
+              }
+          ]
+      },
+      {
+          "name": "11月15日 - 11月21日",
+          "summary": "<div class=\"no-overflow\"><p style=\"text-align: center;\"><br<div style=\"text-align: center;\"><span style=\"color: #0000ff; font-weight: bold;\">教学第10周（教学日历第13周）</span></br<div></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291968",
+                  "access": "编程练习",
+                  "name": "39【中学】学生成绩排序-——结构"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291986",
+                  "access": "编程练习",
+                  "name": "40【结构】买东西*"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291987",
+                  "access": "编程练习",
+                  "name": "41【结构】为整数编号"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291988",
+                  "access": "编程练习",
+                  "name": "42【链表】建立正序链表"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=292005",
+                  "access": "编程练习",
+                  "name": "43【链表】排序"
+              }
+          ]
+      },
+      {
+          "name": "11月22日 - 11月28日",
+          "summary": "<div class=\"no-overflow\"><p align=\"center\"><span style=\"color: #0000ff; font-weight: bold;\">教学第11周（教学日历14周）</span></p></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291964",
+                  "access": "编程练习",
+                  "name": "44【应用】安全的密码"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291965",
+                  "access": "编程练习",
+                  "name": "45【日期】车辆限行"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291966",
+                  "access": "编程练习",
+                  "name": "46【字符】组成最大数"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291967",
+                  "access": "编程练习",
+                  "name": "47【字符】缩写展开"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291954",
+                  "access": "编程练习",
+                  "name": "H14【选做▪应用】逆波兰算术表达式"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291956",
+                  "access": "编程练习",
+                  "name": "H15【选做▪应用】GPS数据处理"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/forum/view.php?id=305744",
+                  "access": "讨论区",
+                  "name": "项目设计文档",
+                  "contentafterlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p>请各组将11月19日汇报的PPT提交到这里。<br></p></div></div>"
+              }
+          ]
+      },
+      {
+          "name": "11月29日 - 12月5日",
+          "summary": "<div class=\"no-overflow\"><div style=\"text-align: center;\"><span style=\"font-weight: bold; color: #0000ff;\">教学第12周（教学日历第15周）</span></div></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=309142",
+                  "access": "编程练习",
+                  "name": "48【面向对象】约瑟夫问题"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291969",
+                  "access": "编程练习",
+                  "name": "H16【选做▪应用】数码管"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=291970",
+                  "access": "编程练习",
+                  "name": "H17【选做▪应用】编码"
+              }
+          ]
+      },
+      {
+          "name": "12月6日 - 12月12日",
+          "summary": "<div class=\"no-overflow\"><div style=\"text-align: center;\"><span style=\"color: #0000ff; font-weight: bold;\">教学第13周（教学日历第16周）</span></div></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=310414",
+                  "access": "编程练习",
+                  "name": "49【链表▪面向对象】链表分割"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=310419",
+                  "access": "编程练习",
+                  "name": "50【链表▪面向对象】链表排序"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=310701",
+                  "access": "编程练习",
+                  "name": "51【链表▪面向对象】链表再排序"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/programming/view.php?id=310542",
+                  "access": "编程练习",
+                  "name": "52【大学▪面向对象】高精度加减法（算符+/-重载）"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/quiz/view.php?id=310691",
+                  "access": "测验",
+                  "name": "H18【选作▪面向对象】字符串处理：C语言班题目"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/quiz/view.php?id=310833",
+                  "access": "测验",
+                  "name": "H19【选做▪面向对象】子串出现次数：C语言班题目"
+              }
+          ]
+      },
+      {
+          "name": "12月13日 - 12月19日",
+          "summary": "<div class=\"no-overflow\"><div style=\"text-align: center;\"><span style=\"font-weight: bold;\">教学第14周（教学日历第17周）</span></div><div style=\"text-align: left;\"><b><span class=\"\" style=\"color: rgb(239, 69, 64);\">期末考试时间已经安排好了，2022年1月11日周二。</span></b><br></div></div>",
+          "summaryText": null,
+          "activity": []
+      },
+      {
+          "name": "12月20日 - 12月26日",
+          "summary": "<div class=\"no-overflow\"><h5 style=\"text-align: center;\">教学第15周（教学日历第18周）</h5></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/assign/view.php?id=311606",
+                  "access": "作业",
+                  "name": "通用菜单驱动程序"
+              }
+          ]
+      },
+      {
+          "name": "12月27日 - 01月2日",
+          "summary": "<div class=\"no-overflow\"><div>\n    <h5 style=\"text-align: center;\">教学第16周（教学日历第19周）</h5></div></div>",
+          "summaryText": null,
+          "activity": [
+              {
+                  "contentwithoutlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><span><b>一、文档</b></span><div><div><div>\n<p>每组可以包含下列简要文档：</p>\n<ol>\n\n<li><b>设计文档</b>：需包含简要的功能设计、整体架构设计、数据结构设计、关键算法设计等；文件命名方式为“小组名+设计文档”。</li>\n\n<li><b>管理文档：</b>需包含人员分工、工作计划、进度安排等；文件命名方式为“小组名+管理文档”。</li>\n<li><b>总结文档：</b>包含<b>小组总结</b>和<b>个人总结</b>两部分；小组总结中需包含小组工作小结、所实现的功能列表、以及组长对组内全部成员的评分，该文件的命名方式为“小组名+小组总结”；每个人的个人总结需单独作为一个文件存放，每个文件的命名方式为“小组名+个人总结+姓名”；全部总结文档存放于“小组名+总结文档”目录下。</li>\n<li><b>汇报</b><b>PPT</b><b>：</b>演示文件的命名方式为“小组名+演示时间”，最后一版的演示PPT存放于“小组名+演示文档”目录下。</li>\n<li><b>系统演示视频（如果有可以提交）：</b>演示程序运行的屏幕录像，对主要功能进行说明。</li>\n</ol>\n<p><b>二、程序</b><br>&nbsp; &nbsp; 请提供环境说明文档，文件命名方式为“小组名+环境说明”。</p><ol>\n<li>请将全部源代码存放于“小组名+源代码”目录下。</li>\n<li>请将可执行文件存放于“小组名+可执行文件”目录下。</li>\n</ol>\n<p><b>三、提交方式</b><br>&nbsp; &nbsp; 请将全部文件放在一个单独的目录下，并提供压缩文件，压缩文件命名方式为“小组名”。文件的目录结构如下：</p>\n<p>小组名<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |____文档<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |____程序</p></div></div></div><p></p></div></div>"
+              },
+              {
+                  "url": "https://lexue.bit.edu.cn/mod/forum/view.php?id=311751",
+                  "access": "讨论区",
+                  "name": "项目开发成果提交",
+                  "contentafterlink": "<div class=\"no-overflow\"><div class=\"no-overflow\"><p>本作业的截止时间为2022年元月9日。<br></p></div></div>"
+              }
+          ]
+      },
+      {
+          "name": "01月3日 - 01月9日",
+          "summary": "<div class=\"no-overflow\"><p></p><h4 align=\"center\">教学第17周（教学日历第20周，复习）</h4><br><p></p></div>",
+          "summaryText": null,
+          "activity": []
+      },
+      {
+          "name": "01月17日 - 01月23日",
+          "summary": "<div class=\"no-overflow\"><div style=\"text-align: center;\"><span style=\"color: #0000ff; font-weight: bold;\">教学第17周</span></div>\n<p><span style=\"font-weight: bold;\">其实，<span style=\"color: #ff0000;\">成绩已经出来了</span>，<strong><span style=\"color: #0000ff;\">就是</span></strong>....<br><span style=\"color: #ff0000;\" color=\"#ff0000\"></span></span></p></div>",
+          "summaryText": null,
+          "activity": []
+      }
+  ]
+}
