@@ -1,5 +1,7 @@
 const apiconfig = require('../ApiConfig');
 const axios = require('axios').default;
+const cheerio = require('cheerio');
+const { universalGetRequest } = require('../utils/Request');
 
 const getEnrolledCourse = (sessKey, moodlesession, offset = 0, limit = 0) => {
   return new Promise ((resolve, reject) => {
@@ -51,6 +53,10 @@ const getEnrolledCourse = (sessKey, moodlesession, offset = 0, limit = 0) => {
   });
 }
 
+const getCourseDetailHtml = async(moodlesession, courseId) => {
+  return await universalGetRequest(`${apiconfig.API_VIEWCOURSE}?id=${courseId}`, moodlesession);
+}
+
 const GetAllCourse = async(req,res,next) => {
   const retJson = await getEnrolledCourse(req.sessKey, req.moodlesession);
   if(typeof(retJson) != 'object') {
@@ -68,6 +74,38 @@ const GetAllCourse = async(req,res,next) => {
   }
 }
 
+const GetCourseContent = async(req,res,next) => {
+  const id = req.params.id;
+  if(id == undefined) {
+    res.json({
+      error: true,
+      msg: 'Invalid course id!'
+    });
+    return;
+  }
+  const html = await getCourseDetailHtml(req.moodlesession, id);
+  const $ = cheerio.load(html);
+  const sections = [];
+  const courseName = $('.page-header-headings').find('h1').text().trim();
+  const topics = $('li');
+  topics.each((index, section) => {
+    const classValue = $(section).attr('class');
+    if(!classValue) return;
+    if(!classValue.includes('section')) return;
+    const curSection = {};
+    const contentElem = $(section).find('.content');
+    curSection.name = $(contentElem).find('h3').text().trim();
+
+    sections.push(curSection);
+  });
+  res.json({
+    courseName,
+    sections,
+  });
+}
+
 module.exports = {
-  GetAllCourse
+  GetAllCourse,
+  GetCourseContent,
+
 };

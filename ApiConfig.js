@@ -3,6 +3,7 @@ const API_DETAILUSERINFO = 'https://lexue.bit.edu.cn/user/edit.php';
 const API_AJAXSERVICE = 'https://lexue.bit.edu.cn/lib/ajax/service.php?info=core_course_get_enrolled_courses_by_timeline_classification';
 const API_USERPROFILE = 'https://lexue.bit.edu.cn/user/profile.php';
 const API_USERPOSTS = 'https://lexue.bit.edu.cn/mod/forum/user.php';
+const API_VIEWCOURSE = 'https://lexue.bit.edu.cn/course/view.php';
 
 module.exports = {
   // 用户基本信息
@@ -15,5 +16,7 @@ module.exports = {
   API_USERPROFILE,
   // 用户发送的帖子
   API_USERPOSTS,
-
+  // 浏览课程的详情
+  API_VIEWCOURSE,
+  
 };
