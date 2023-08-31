@@ -20,7 +20,7 @@ const GetEnrolledCourse = (sessKey, moodlesession, offset = 0, limit = 0) => {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: `${apiconfig.API_GETENROLLEDCOURSE}&sesskey=${sessKey}`,
+      url: `${apiconfig.API_AJAXSERVICE}&sesskey=${sessKey}`,
       headers: { 
         'Host': 'lexue.bit.edu.cn', 
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0', 
