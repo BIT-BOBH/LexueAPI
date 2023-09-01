@@ -1,0 +1,16 @@
+{
+  "members": [
+      {
+          "href": "https://lexue.bit.edu.cn/user/view.php?id=xxxx&course=xxxx",
+          "name": "名字1",
+          "role": "学生",
+          "group": "06111234班"
+      },
+      {
+          "href": "https://lexue.bit.edu.cn/user/view.php?id=xxxx&course=xxxx",
+          "name": "名字2",
+          "role": "学生",
+          "group": "06116666班"
+      }
+  ]
+}

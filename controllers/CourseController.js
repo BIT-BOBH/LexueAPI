@@ -170,13 +170,13 @@ const GetCourseMembers = async(req,res,next) => {
     if(aElem.length > 0) {
       curMember.href = aElem.attr('href');
       curMember.name = aElem.text().trim();
-      cnt++;
+      if(curMember.name != "") cnt++;
     }
     const tdElements = $(member).find('td');
     if(tdElements.length >= 2) {
       curMember.role = tdElements.first().text().trim();
       curMember.group = tdElements.eq(1).text().trim();
-      cnt++;
+      if(curMember.role != "" || curMember.group != "") cnt++;
     }
     if(cnt > 0) members.push(curMember);
   });

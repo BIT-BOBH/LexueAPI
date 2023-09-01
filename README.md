@@ -226,3 +226,35 @@
 }
 ```
 
+## 8. 获取课程参与者名单
+
+| 方法 | GET                     |
+| ---- | ----------------------- |
+| 链接 | /api/course/members/:id |
+
+| 参数 | 描述     |
+| ---- | -------- |
+| :id  | 课程的id |
+
+返回示例：
+
+```
+参见 "./example/course_members.json"
+```
+
+```json
+{
+    "error": true,
+    "msg": "Request failed!",
+    "detail": {
+        "error": true,
+        "exception": {
+            "message": "在数据库表course中找不到数据记录。",
+            "errorcode": "invalidrecord",
+            "link": "https://lexue.bit.edu.cn/",
+            "moreinfourl": "http://docs.moodle.org/311/en/error/moodle/invalidrecord"
+        }
+    }
+}
+```
+
