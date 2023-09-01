@@ -1,5 +1,4 @@
 const apiconfig = require('../ApiConfig');
-const axios = require('axios').default;
 const cheerio = require('cheerio');
 const { universalGetRequest, universalServiceCall } = require('../utils/Request');
 
@@ -16,6 +15,36 @@ const getEnrolledCourse = async(sessKey, moodlesession, offset = 0, limit = 0) =
 
 const getCourseDetailHtml = async(moodlesession, courseId) => {
   return await universalGetRequest(`${apiconfig.API_VIEWCOURSE}?id=${courseId}`, moodlesession);
+}
+
+const getCourseMembers = async(sessKey, moodlesession, courseId) => {
+  return await universalServiceCall(sessKey, moodlesession, "core_table_get_dynamic_table_content", {
+    "component": "core_user",
+    "handler": "participants",
+    "uniqueid": `user-index-participants-${courseId}`,
+    "sortdata": [
+        {
+            "sortby": "lastname",
+            "sortorder": 4
+        }
+    ],
+    "jointype": 2,
+    "filters": {
+        "courseid": {
+            "name": "courseid",
+            "jointype": 1,
+            "values": [
+              Number.parseInt(courseId)
+            ]
+        }
+    },
+    "firstinitial": "",
+    "lastinitial": "",
+    "pagenumber": "1",
+    "pagesize": "5000",
+    "hiddencolumns": [],
+    "resetpreferences": false
+  });
 }
 
 const GetAllCourse = async(req,res,next) => {
@@ -112,11 +141,52 @@ const GetCourseContent = async(req,res,next) => {
 }
 
 const GetCourseMembers = async(req,res,next) => {
-
+  const id = req.params.id;
+  const retJson = await getCourseMembers(req.sessKey, req.moodlesession, id);
+  if(typeof(retJson) != 'object') {
+    res.json({
+      error: true,
+      msg: 'API return error info.',
+      detail: JSON.stringify(retJson)
+    });
+    return;
+  }
+  const members = [];
+  const html = retJson[0]?.data?.html;
+  if(html == undefined) {
+    res.json({
+      error: true,
+      msg: 'Request failed!',
+      detail: retJson[0]
+    });
+    return;
+  }
+  const $ = cheerio.load(html);
+  const memberElems = $('tbody').find('tr');
+  memberElems.each((index, member) => {
+    const curMember = {};
+    const aElem = $(member).find('a');
+    let cnt = 0;
+    if(aElem.length > 0) {
+      curMember.href = aElem.attr('href');
+      curMember.name = aElem.text().trim();
+      cnt++;
+    }
+    const tdElements = $(member).find('td');
+    if(tdElements.length >= 2) {
+      curMember.role = tdElements.first().text().trim();
+      curMember.group = tdElements.eq(1).text().trim();
+      cnt++;
+    }
+    if(cnt > 0) members.push(curMember);
+  });
+  res.json({
+    members,
+  });
 }
 
 module.exports = {
   GetAllCourse,
   GetCourseContent,
-
+  GetCourseMembers,
 };
