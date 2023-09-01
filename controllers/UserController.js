@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const apiconfig = require('../ApiConfig');
 const axios = require('axios').default;
-const { universalGetRequest } = require('../utils/Request');
+const { universalGetRequest, universalServiceCall } = require('../utils/Request');
 
 const getDetailUserInfoHtml = async(userId, moodlesession) => {
   return await universalGetRequest(`${apiconfig.API_DETAILUSERINFO}?id=${userId}`, moodlesession);
@@ -14,50 +14,11 @@ const getUserProfileHtml = async(userId, moodlesession) => {
 const getUserPostsHtml = async(userId, moodlesession) => {
   return await universalGetRequest(`${apiconfig.API_USERPOSTS}?id=${userId}&perpage=99999`, moodlesession);
 }
-const getUserMessage = (sessKey, moodlesession, userId, offset = 0, limit = 0) => {
-  return new Promise ((resolve, reject) => {
-    let data = JSON.stringify([
-      {
-        "index": 0,
-        "methodname": "message_popup_get_popup_notifications",
-        "args": {
-          "limit": limit,
-          "offset": offset,
-          "useridto": `${userId}`
-        }
-      }
-    ]);
-    let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: `${apiconfig.API_AJAXSERVICE}&sesskey=${sessKey}`,
-      headers: { 
-        'Host': 'lexue.bit.edu.cn', 
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0', 
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8', 
-        'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2', 
-        'Accept-Encoding': 'gzip, deflate, br', 
-        'Connection': 'keep-alive', 
-        'Referer': 'https://lexue.bit.edu.cn/', 
-        'Cookie': `MoodleSession=${moodlesession};`, 
-        'Upgrade-Insecure-Requests': '1'
-      },
-      maxRedirects: 0,
-      data: data,
-      validateStatus: (status)=>{
-        return true;
-      }
-    };
-    axios.request(config).then((response) => {
-      if(response.headers.location == undefined && response.status == 200) {
-        resolve(response.data);
-      } else {
-        resolve("");
-      }
-    })
-    .catch((error) => {
-      resolve("");
-    });
+const getUserMessage = async(sessKey, moodlesession, userId, offset = 0, limit = 0) => {
+  return await universalServiceCall(sessKey, moodlesession, "message_popup_get_popup_notifications", {
+    "limit": limit,
+    "offset": offset,
+    "useridto": `${userId}`
   });
 }
 
